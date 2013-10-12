@@ -1,0 +1,27 @@
+<h1>Listing zom_nouns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Zom noun</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zom_nouns.each do |zom_noun| %>
+      <tr>
+        <td><%= zom_noun.zom_noun %></td>
+        <td><%= link_to 'Show', zom_noun %></td>
+        <td><%= link_to 'Edit', edit_zom_noun_path(zom_noun) %></td>
+        <td><%= link_to 'Destroy', zom_noun, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Zom noun', new_zom_noun_path %>

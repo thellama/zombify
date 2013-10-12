@@ -1,0 +1,27 @@
+<h1>Listing noun_phrases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Noun phrase</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @noun_phrases.each do |noun_phrase| %>
+      <tr>
+        <td><%= noun_phrase.noun_phrase %></td>
+        <td><%= link_to 'Show', noun_phrase %></td>
+        <td><%= link_to 'Edit', edit_noun_phrase_path(noun_phrase) %></td>
+        <td><%= link_to 'Destroy', noun_phrase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Noun phrase', new_noun_phrase_path %>

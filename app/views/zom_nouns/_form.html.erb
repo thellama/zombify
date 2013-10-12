@@ -1,0 +1,21 @@
+<%= form_for(@zom_noun) do |f| %>
+  <% if @zom_noun.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@zom_noun.errors.count, "error") %> prohibited this zom_noun from being saved:</h2>
+
+      <ul>
+      <% @zom_noun.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :zom_noun %><br>
+    <%= f.text_field :zom_noun %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

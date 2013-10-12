@@ -1,4 +1,13 @@
 Zombify::Application.routes.draw do
+
+  root 'micro_posts#index'
+
+  resources :micro_posts
+
+  resources :zom_nouns
+
+  resources :noun_phrases
+
   get "static_pages/home"
   get "static_pages/help"
   get "static_pages/about"

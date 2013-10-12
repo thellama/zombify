@@ -1,0 +1,21 @@
+<%= form_for(@noun_phrase) do |f| %>
+  <% if @noun_phrase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@noun_phrase.errors.count, "error") %> prohibited this noun_phrase from being saved:</h2>
+
+      <ul>
+      <% @noun_phrase.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :noun_phrase %><br>
+    <%= f.text_field :noun_phrase %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
