@@ -1,8 +1,10 @@
 Zombify::Application.routes.draw do
 
-  root 'micro_posts#index'
+  resources :microposts
 
-  resources :micro_posts
+  resources :users
+
+  root 'micro_posts#index'
 
   resources :zom_nouns
 

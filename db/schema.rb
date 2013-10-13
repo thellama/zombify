@@ -11,17 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131012220140) do
+ActiveRecord::Schema.define(version: 20131012231410) do
 
   create_table "micro_posts", force: true do |t|
-    t.text     "micro_post", limit: 250
+    t.text     "content",    limit: 250
     t.string   "user_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "microposts", force: true do |t|
+    t.integer  "user_id"
+    t.text     "post"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "noun_phrases", force: true do |t|
     t.string   "noun_phrase"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "user"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
